@@ -1,10 +1,11 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "costacodes",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Diogo's site",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Diogo Costa",
   "dependencies": {
+    "@types/jest": "^24.0.25",
     "gatsby": "^2.4.2",
     "gatsby-image": "^2.0.41",
     "gatsby-plugin-manifest": "^2.1.1",
@@ -27,8 +28,15 @@
     "typography-theme-us-web-design-standards": "^0.16.19"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.4.0",
+    "babel-jest": "^24.9.0",
+    "babel-preset-gatsby": "^0.2.26",
     "ghpages": "0.0.10",
-    "prettier": "^1.17.0"
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.9.0",
+    "prettier": "^1.17.0",
+    "react-test-renderer": "^16.12.0"
   },
   "keywords": [
     "gatsby"
@@ -40,7 +48,7 @@
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
+    "test": "jest",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public --branch master"
   },
   "repository": {
