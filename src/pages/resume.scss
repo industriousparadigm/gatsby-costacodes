@@ -1,11 +1,40 @@
 @import '../styles/colors';
 @import '../styles/space';
 
+// @font-face {
+//   font-family: 'Norwester';
+//   src: url('../fonts/norwester.woff');
+// }
+
+body {
+  background-color: $CREAMY_WHITE;
+  a,
+  a:link,
+  a:visited,
+  a:active {
+    color: $LINKY_BLUE;
+  }
+  a:hover {
+    color: $LINKY_HOVER;
+  }
+}
+
 ul {
-  list-style: circle;
   margin-left: 1em;
   margin-bottom: 0;
+  line-height: 1rem;
 }
+
+li {
+  margin: 0;
+}
+
+// h1,
+// h2,
+// h3,
+// h4 {
+//   font-family: 'Norwester';
+// }
 
 .resume-title {
   display: flex;
@@ -22,16 +51,37 @@ ul {
   column-width: 256px;
   -webkit-column-rule: 1px dotted $SMOKE;
   -moz-column-rule: 1px dotted $SMOKE;
-  column-rule: 1px dotted $SMOKE;
+  column-rule: 4px solid $LETTUCE_GREEN;
 }
 
 .resume-name {
   margin-bottom: $SPACING_MEDIUM;
+  color: $SALMON_RED;
+}
+
+.title-section-description {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: 'Work Sans';
+  text-transform: uppercase;
+  font-size: large;
+  letter-spacing: 0.1rem;
+  margin-bottom: $SPACING_MEDIUM;
+  background-color: $LETTUCE_GREEN;
+  width: 100%;
+  height: 50px;
+
+  @media screen and (max-width: 577px) {
+    letter-spacing: 0rem;
+    font-size: medium;
+  }
 }
 
 .section {
   display: inline-block;
   width: 100%;
+  color: $SALMON_RED;
 }
 
 .section-title-container {
@@ -59,12 +109,16 @@ ul {
 .entry-title {
   color: $TEXT;
   margin: $SPACING_SMALL 0;
+  font-size: 17px;
   line-height: 1.25;
+  font-weight: bold;
 }
 
 .entry-company {
   margin: $SPACING_XSMALL 0;
+  font-size: 16px;
   line-height: 1.25;
+  font-weight: bold;
 }
 
 .entry-duration {
@@ -79,10 +133,6 @@ ul {
   font-size: 14px;
   line-height: 1.7em;
   margin-bottom: $SPACING_SMALL;
-}
-
-.title-section-description {
-  margin-bottom: $SPACING_MEDIUM;
 }
 
 .icon-section {

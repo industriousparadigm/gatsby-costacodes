@@ -1,13 +1,13 @@
-import { graphql, StaticQuery } from 'gatsby'
-import React, { FunctionComponent } from 'react'
+import { graphql, StaticQuery, useStaticQuery } from 'gatsby'
+import React, { FC } from 'react'
 import Icon from '../components/icon'
 import Layout from '../components/layout'
 
-import { Duration, Entry, Resume, Section } from '../@types/resume.d.ts'
+import { Duration, Entry, Resume, Section } from '../@types/resume'
 import data from '../data/resume'
 import './resume.scss'
 
-const Page: FunctionComponent = () => {
+const Page: FC = () => {
   return (
     <Layout>
       <RenderResume {...data} />
@@ -15,11 +15,11 @@ const Page: FunctionComponent = () => {
   )
 }
 
-const RenderResume: FunctionComponent<Resume> = ({ sections }) => {
+const RenderResume: FC<Resume> = ({ sections }) => {
   return (
     <>
-     <ResumeTitle/>
-      <div className="resume-body">
+      <ResumeTitle />
+      <div className='resume-body'>
         {sections.map(section => (
           <RenderSection key={`section-${section.title}`} {...section} />
         ))}
@@ -28,69 +28,62 @@ const RenderResume: FunctionComponent<Resume> = ({ sections }) => {
   )
 }
 
-const ResumeTitle: FunctionComponent<> = () => {
-  return (
-    <StaticQuery
-      query={graphql`
-        query {
-          site {
-            siteMetadata {
-              author
-              location
-              description
-              email
-              linkedin
-              github
-              medium
-            }
-          }
+const ResumeTitle: FC = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          author
+          profession
+          location
+          description
+          email
+          linkedin
+          github
+          medium
         }
-      `}
-      render={data => {
-        const {
-          author,
-          location,
-          email,
-          github,
-          linkedin,
-          medium,
-          description,
-        } = data.site.siteMetadata
+      }
+    }
+  `)
 
-        const iconsWithLinks = [
-          ['email', `mailto:${email}`],
-          ['github', github],
-          ['linkedin', linkedin],
-          ['medium', medium],
-        ]
+  const {
+    author,
+    profession,
+    location,
+    email,
+    github,
+    linkedin,
+    medium
+  } = data.site.siteMetadata
 
-        return (
-          <div className="resume-title">
-          <h1 className="resume-name">{author}</h1>
-          <h5 className="title-section-description">
-            {location}
-          </h5>
-            <div className="icon-section">
-              {iconsWithLinks.map(([iconName, href], i) => (
-                <a key={`link-${i}`} className="link-icon" href={href}>
-                  <Icon key={`link-${i}`} name={iconName} />
-                </a>
-              ))}
-            </div>
-          </div>
-        )
-      }}
-    />
+  const iconsWithLinks = [
+    ['email', `mailto:${email}`],
+    ['github', github],
+    ['linkedin', linkedin],
+    ['mulan', medium]
+  ]
+
+  return (
+    <div className='resume-title'>
+      <h1 className='resume-name'>{author}</h1>
+      <h5 className='title-section-description'>{`${profession} | ${location}`}</h5>
+      <div className='icon-section'>
+        {iconsWithLinks.map(([iconName, href], i) => (
+          <a key={`link-${i}`} className='link-icon' href={href}>
+            <Icon key={`link-${i}`} name={iconName} />
+          </a>
+        ))}
+      </div>
+    </div>
   )
 }
 
 /** Renders a section, a titled list of entries. */
-const RenderSection: FunctionComponent<Section> = ({ title, entries }) => {
+const RenderSection: FC<Section> = ({ title, entries }) => {
   return (
-    <section className="section">
-      <div className="section-title-container">
-        <h2 className="section-title">{title}</h2>
-        <div className="section-bar" />
+    <section className='section'>
+      <div className='section-title-container'>
+        <h2 className='section-title'>{title}</h2>
       </div>
       {entries.map((entry, i) => (
         <RenderEntry key={`${title}-entry-${i}`} {...entry} />
@@ -100,23 +93,25 @@ const RenderSection: FunctionComponent<Section> = ({ title, entries }) => {
 }
 
 /** A single entry, either a job entry or a list of skills. */
-const RenderEntry: FunctionComponent<Entry> = ({
+const RenderEntry: FC<Entry> = ({
   title,
   link,
   company,
   duration,
-  description,
+  description
 }) => {
   const header = (
     <>
-      {title && (
-        <h4 className="entry-title">
-          {link ? <a href={link}>{title}</a> : title}
-        </h4>
+      {title && <p className='entry-title'>{title}</p>}
+      {company && link ? (
+        <a href={link} target='_blank' rel='noopener noreferrer'>
+          <p className='entry-company'>{company}</p>
+        </a>
+      ) : (
+        <h5 className='entry-company'>{company}</h5>
       )}
-      {company && <h5 className="entry-company">{company}</h5>}
       {duration && (
-        <div className="entry-duration">{`${duration.start} - ${
+        <div className='entry-duration'>{`${duration.start} - ${
           duration.end
         }`}</div>
       )}
@@ -124,7 +119,7 @@ const RenderEntry: FunctionComponent<Entry> = ({
   )
 
   const body = Array.isArray(description) ? (
-    <ul className="languages">
+    <ul className='languages'>
       {description.map((item, i) => (
         <li key={`languages-${item}-${i}`}>{item}</li>
       ))}
@@ -134,9 +129,9 @@ const RenderEntry: FunctionComponent<Entry> = ({
   )
 
   return (
-    <div className="entry">
+    <div className='entry'>
       {header}
-      <div className="entry-description">{body}</div>
+      <div className='entry-description'>{body}</div>
     </div>
   )
 }

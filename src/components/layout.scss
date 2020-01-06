@@ -23,10 +23,6 @@ a:visited {
   text-decoration: none;
 }
 
-ul {
-  list-style: none;
-}
-
 .link-style {
   font-family: 'Source Serif Pro', 'sans-serif';
 }
@@ -71,7 +67,7 @@ img {
  */
 
 /* Adjust the position of the line numbers */
-.gatsby-highlight pre[class*="language-"].line-numbers {
+.gatsby-highlight pre[class*='language-'].line-numbers {
   padding-left: 2.8em;
 }
 
@@ -87,7 +83,7 @@ img {
   overflow: auto;
 }
 
-.gatsby-highlight pre[class*="language-"].line-numbers {
+.gatsby-highlight pre[class*='language-'].line-numbers {
   padding: 0;
   padding-left: 2.8em;
   overflow: initial;
