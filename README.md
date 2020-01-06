@@ -1,16 +1,14 @@
-# Gatsby Typescript Resume
+# costacodes.com
 
-A responsive resume created with Gatsby and Typescript.
+My website, made with Gatsby and Typescript. Very WIP, it's not even online yet!
 
-### Usage instructions
+The code is currently largely based on [e-nichols](https://github.com/e-nichols)'s [repo](https://github.com/e-nichols/gatsby-typescript-resume) which built a responsive resume on top of Gatsby Starter while adding TypeScript.
 
-```
-$ git clone https://github.com/e-nichols/gatsby-typescript-resume.git
-$ cd gatsby-typescript-resume
-$ gatsby develop
-```
+He also has a very nice [tutorial](http://etnichols.com/tutorials/resume-with-react-and-tsx) describing the process.
 
-After the site builds, point your browser to `localhost:8000/resume`.
+### To do
 
-### Tutorial 
-Tutorial available soon.
+- Add React Testing Library
+- Use TDD for all features going forward
+- Add landing page chatter
+- Better style
