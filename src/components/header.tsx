@@ -20,7 +20,7 @@ const Header: React.FC<Props> = ({ siteTitle = '' }) => (
         padding: `1.45rem 1.0875rem`
       }}
     >
-      <h1 style={{ margin: 0 }}>
+      <h1 style={{ margin: 0 }} data-testid='site-title'>
         <Link
           to='/'
           style={{
