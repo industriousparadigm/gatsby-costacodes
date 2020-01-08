@@ -1,5 +1,6 @@
 // import dependencies
 import React from 'react'
+import { StaticQuery } from 'gatsby'
 
 // import react-testing methods
 import { render } from '@testing-library/react'
@@ -8,7 +9,6 @@ import { render } from '@testing-library/react'
 
 // the component to test
 import Index from '../index'
-import { StaticQuery } from 'gatsby'
 
 // things to do before
 beforeEach(() => {
@@ -16,7 +16,7 @@ beforeEach(() => {
     render({
       site: {
         siteMetadata: {
-          title: `Default Starter`
+          title: `Costa Codes`
         }
       }
     })
