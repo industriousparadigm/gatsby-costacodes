@@ -4,6 +4,16 @@
   "description": "Diogo's site",
   "version": "0.1.0",
   "author": "Diogo Costa",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public --branch master"
+  },
   "dependencies": {
     "@types/jest": "^24.0.25",
     "gatsby": "^2.4.2",
@@ -42,15 +52,6 @@
     "gatsby"
   ],
   "license": "MIT",
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write src/**/*.{js,jsx}",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "test": "jest",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public --branch master"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/gatsbyjs/gatsby-starter-default"

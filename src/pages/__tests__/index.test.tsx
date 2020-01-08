@@ -25,17 +25,17 @@ beforeEach(() => {
 
 describe('<Index />', () => {
   it('Renders correctly', () => {
-    const tree = render.create(<Index />).toJSON()
-    expect(tree).toMatchSnapshot()
+    const { container } = render(<Index />)
+    expect(container).toMatchSnapshot()
   })
 
-  it('Displays at least one intro paragraph', () => {
-    // Arrange
-    const { getByTestId } = render(<Index />)
+  // it('Displays at least one intro paragraph', () => {
+  //   // Arrange
+  //   const { getByTestId } = render(<Index />)
 
-    // Act
+  //   // Act
 
-    // Assert
-    expect(getByTestId('site-title')).toHaveTextContent(siteTitle)
-  })
+  //   // Assert
+  //   expect(getByTestId('site-title')).toHaveTextContent(siteTitle)
+  // })
 })
