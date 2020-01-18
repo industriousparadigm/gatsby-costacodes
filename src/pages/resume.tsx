@@ -2,37 +2,18 @@ import { graphql, StaticQuery, useStaticQuery } from 'gatsby'
 import React, { FC } from 'react'
 import Icon from '../components/icon'
 import Layout from '../components/layout'
+import ResumeSectionEntry from '../components/resume-section-entry'
 
 import { Duration, Entry, Resume, Section } from '../@types/resume'
 import data from '../data/resume'
 import './resume.scss'
 
 const Page: FC = () => {
-  return (
-    <Layout>
-      <RenderResume {...data} />
-    </Layout>
-  )
-}
-
-const RenderResume: FC<Resume> = ({ sections }) => {
-  return (
-    <>
-      <ResumeTitle />
-      <div className='resume-body'>
-        {sections.map(section => (
-          <RenderSection key={`section-${section.title}`} {...section} />
-        ))}
-      </div>
-    </>
-  )
-}
-
-const ResumeTitle: FC = () => {
-  const data = useStaticQuery(graphql`
+  const { site, allMarkdownRemark } = useStaticQuery(graphql`
     query {
       site {
         siteMetadata {
+          resumeSections
           author
           profession
           location
@@ -43,9 +24,53 @@ const ResumeTitle: FC = () => {
           medium
         }
       }
+      allMarkdownRemark {
+        edges {
+          node {
+            frontmatter {
+              section
+              role
+              institution
+              degree
+              startDate
+              endDate
+            }
+            html
+          }
+        }
+      }
     }
   `)
 
+  return (
+    <Layout>
+      <RenderResume metadata={site.siteMetadata} markdown={allMarkdownRemark} />
+    </Layout>
+  )
+}
+
+const RenderResume: FC<Resume> = ({ metadata, markdown }) => {
+  const sections = metadata.resumeSections
+  const entries = markdown.edges
+
+  return (
+    <div className='resume-container'>
+      <ResumeTitle metadata={metadata} />
+      <div className='resume-body'>
+        {sections.map(section => (
+          <RenderSection
+            key={`section-${section}`}
+            title={section}
+            markdown={markdown}
+            entries={entries}
+          />
+        ))}
+      </div>
+    </div>
+  )
+}
+
+const ResumeTitle: FC = ({ metadata }) => {
   const {
     author,
     profession,
@@ -54,7 +79,7 @@ const ResumeTitle: FC = () => {
     github,
     linkedin,
     medium
-  } = data.site.siteMetadata
+  } = metadata
 
   const iconsWithLinks = [
     ['email', `mailto:${email}`],
@@ -79,60 +104,20 @@ const ResumeTitle: FC = () => {
 }
 
 /** Renders a section, a titled list of entries. */
-const RenderSection: FC<Section> = ({ title, entries }) => {
+const RenderSection: FC<Section> = ({ title, markdown, entries }) => {
+  console.log({ entries, title })
   return (
     <section className='section'>
       <div className='section-title-container'>
         <h2 className='section-title'>{title}</h2>
       </div>
       {entries.map((entry, i) => (
-        <RenderEntry key={`${title}-entry-${i}`} {...entry} />
+        <ResumeSectionEntry
+          key={`${title}-entry-${i}`}
+          entry={entry.node.frontmatter.section === title ? entry : null}
+        />
       ))}
     </section>
-  )
-}
-
-/** A single entry, either a job entry or a list of skills. */
-const RenderEntry: FC<Entry> = ({
-  title,
-  link,
-  company,
-  duration,
-  description
-}) => {
-  const header = (
-    <>
-      {title && <p className='entry-title'>{title}</p>}
-      {company && link ? (
-        <a href={link} target='_blank' rel='noopener noreferrer'>
-          <p className='entry-company'>{company}</p>
-        </a>
-      ) : (
-        <h5 className='entry-company'>{company}</h5>
-      )}
-      {duration && (
-        <div className='entry-duration'>{`${duration.start} - ${
-          duration.end
-        }`}</div>
-      )}
-    </>
-  )
-
-  const body = Array.isArray(description) ? (
-    <ul className='languages'>
-      {description.map((item, i) => (
-        <li key={`languages-${item}-${i}`}>{item}</li>
-      ))}
-    </ul>
-  ) : (
-    description
-  )
-
-  return (
-    <div className='entry'>
-      {header}
-      <div className='entry-description'>{body}</div>
-    </div>
   )
 }
 

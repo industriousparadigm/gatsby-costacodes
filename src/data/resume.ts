@@ -14,7 +14,7 @@ const data: Resume = {
             end: 'Present'
           },
           description: [
-            'Managing a React-Node codebase for a site with thousands of daily visitors',
+            'React-Node codebase handling thousands of daily visitors',
             'Learning technicalities of programming and dev team culture',
             'Contributing to tapestry-lite, an in-house Node server',
             'Updating the codebase to enable React upgrade (hooks!)',

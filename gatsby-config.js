@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Costa Codes`,
-    description: `A simple, responsive resume using Gatsby and Typescript.`,
+    title: `Diogo's website`,
+    description: `My page, using Gatsby and Typescript.`,
     author: `Diogo Costa`,
     profession: 'Software developer',
     email: `dsgmcosta@gmail.com`,
@@ -9,12 +9,29 @@ module.exports = {
     github: `https://github.com/industriousparadigm`,
     linkedin: `https://www.linkedin.com/in/diogosalvinicosta/`,
     medium: `https://medium.com/search?q=gatsby%20js`,
-    sections: ['home', 'resume', 'about'],
-    homeText: [
-      'Hi! My name is Diogo and I come in peace in order to make your life cooler.',
-      "This is a second paragraph, where I expand upon the topics briefly mentioned in the first paragraph. For example, by peace I mean that I won't criticize your stack size and such."
+    menuItems: [
+      {
+        name: 'about',
+        path: '/'
+      },
+      {
+        name: 'resume',
+        path: '/resume'
+      }
     ],
-    aboutText: ['', '']
+    homeText: [
+      'Hi!',
+      'Every day, I think about how to make software better and then type some code to achieve that goal.',
+      'I do so mainly at Stylist magazine in London, where I work as a web developer.'
+    ],
+    resumeSections: [
+      'Bio',
+      'Career',
+      'Projects',
+      'Education',
+      'Programming tools',
+      'Languages'
+    ]
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -23,6 +40,29 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `markdown-sources`,
+        path: `${__dirname}/src/markdown-sources`
+      }
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-typescript',
+            options: {
+              prettierOptions: {
+                semi: false,
+                singleQuote: false
+              }
+            }
+          }
+        ]
       }
     },
     `gatsby-transformer-sharp`,
@@ -41,13 +81,6 @@ module.exports = {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `${__dirname}/src/utils/typography.js`
-      }
-    },
-    {
-      resolve: `gatsby-source-contentful`,
-      options: {
-        spaceId: `4lsduqglmfq4`,
-        accessToken: `aAxf6kugQUqN2eJT8zPBnfKwxaMPlM2yyPWZOdXpRNs`
       }
     },
     `gatsby-plugin-typescript`,
