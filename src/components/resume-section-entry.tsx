@@ -4,6 +4,8 @@ const ResumeSectionEntry: React.FC = ({ entry }) => {
   if (!entry) return null
   const {
     section,
+    name,
+    description,
     role,
     institution,
     link,
@@ -12,9 +14,11 @@ const ResumeSectionEntry: React.FC = ({ entry }) => {
     endDate
   } = entry.node.frontmatter
 
-  console.log({ entry })
-
-  if (section === 'Bio' || section === 'Programming tools')
+  if (
+    section === 'Bio' ||
+    section === 'Programming tools' ||
+    section === 'Languages'
+  )
     return (
       <div className='entry'>
         <div
@@ -24,41 +28,46 @@ const ResumeSectionEntry: React.FC = ({ entry }) => {
       </div>
     )
 
-  // if (section === 'Programming tools')
-  // return (
-  //   <div className='entry'>
-  //     <div
-  //       className='entry-details'
-  //       dangerouslySetInnerHTML={{ __html: entry.node.html }}
-  //     />
-  //   </div>
-  // )
+  if (section === 'Projects')
+    return (
+      <div className='entry'>
+        <a href={link} target='_blank' rel='noopener noreferrer'>
+          <h3 className='entry-title'>{name}</h3>
+        </a>
+        <p className='entry-subtitle'>{description}</p>
+        <div
+          className='entry-details'
+          dangerouslySetInnerHTML={{ __html: entry.node.html }}
+        />
+      </div>
+    )
 
-  return (
-    <div className='entry'>
-      {role ? (
-        <>
-          <p className='entry-title'>{role}</p>
-          <a href={link} target='_blank' rel='noopener noreferrer'>
-            <p className='entry-institution'>{institution}</p>
-          </a>
-          <div
-            className='entry-details'
-            dangerouslySetInnerHTML={{ __html: entry.node.html }}
-          />
-        </>
-      ) : (
-        <>
-          <a href={link} target='_blank' rel='noopener noreferrer'>
-            <p className='entry-title'>{institution}</p>
-          </a>
-          <p className='entry-details'>
-            {degree}, {endDate}
-          </p>
-        </>
-      )}
-    </div>
-  )
+  if (section === 'Career')
+    return (
+      <div className='entry'>
+        <h3 className='entry-title'>{role}</h3>
+        <a href={link} target='_blank' rel='noopener noreferrer'>
+          <h5 className='entry-institution'>{institution}</h5>
+        </a>
+        <div
+          className='entry-details'
+          dangerouslySetInnerHTML={{ __html: entry.node.html }}
+        />
+      </div>
+    )
+
+  if (section === 'Education')
+    return (
+      <div className='entry'>
+        <a href={link} target='_blank' rel='noopener noreferrer'>
+          <p className='entry-title'>{institution}</p>
+        </a>
+        <p className='entry-subtitle'>
+          {degree},{' '}
+          {startDate !== endDate ? `${startDate}-${endDate}` : endDate}
+        </p>
+      </div>
+    )
 }
 
 export default ResumeSectionEntry

@@ -1,7 +1,5 @@
 import Typography from 'typography'
-// import usWebDesignStandardsTheme from 'typography-theme-us-web-design-standards'
 
-// const typography = new Typography(usWebDesignStandardsTheme)
 const typography = new Typography({
   baseFontSize: '18px',
   baseLineHeight: 1.45,

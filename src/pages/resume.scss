@@ -1,35 +1,30 @@
-@import "../styles/colors";
-@import "../styles/space";
-
-// @font-face {
-//   font-family: 'Norwester';
-//   src: url('../fonts/norwester.woff');
-// }
+@import '../styles/colors';
+@import '../styles/space';
 
 .resume-container {
-    background-color: $CREAMY_WHITE;
-    padding: 10px;
+  background-color: $CREAMY_WHITE;
+  padding: 10px;
 
-    a,
-    a:link,
-    a:visited,
-    a:active {
-        color: $LINKY_BLUE;
-    }
+  a,
+  a:link,
+  a:visited,
+  a:active {
+    color: $LINKY_BLUE;
+  }
 
-    a:hover {
-        color: $LINKY_BLUE_HOVER;
-    }
+  a:hover {
+    color: $LINKY_BLUE_HOVER;
+  }
 }
 
 ul {
-    margin-left: 1em;
-    margin-bottom: 0;
-    line-height: 1rem;
+  margin-left: 1em;
+  margin-bottom: 0;
+  line-height: 1rem;
 }
 
 li {
-    margin: 0;
+  margin: 0;
 }
 
 // h1,
@@ -40,118 +35,121 @@ li {
 // }
 
 .resume-title {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .resume-body {
-    -webkit-column-count: 2;
-    -moz-column-count: 2;
-    column-count: 2;
-    -webkit-column-width: 256px;
-    -moz-column-width: 256px;
-    column-width: 256px;
-    -webkit-column-rule: 1px dotted $SMOKE;
-    -moz-column-rule: 1px dotted $SMOKE;
-    column-rule: 4px solid $LETTUCE_GREEN;
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+  -webkit-column-width: 256px;
+  -moz-column-width: 256px;
+  column-width: 256px;
+  -webkit-column-rule: 1px dotted $SMOKE;
+  -moz-column-rule: 1px dotted $SMOKE;
+  column-rule: 4px solid $LETTUCE_GREEN;
 }
 
 .resume-name {
-    margin-bottom: $SPACING_MEDIUM;
-    color: $SALMON_RED;
+  margin-bottom: $SPACING_MEDIUM;
+  color: $SALMON_RED;
 }
 
 .title-section-description {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    font-family: 'Work Sans';
-    text-transform: uppercase;
-    font-size: large;
-    letter-spacing: 0.1rem;
-    margin-bottom: $SPACING_MEDIUM;
-    background-color: $LETTUCE_GREEN;
-    color: $TEXT;
-    width: 100%;
-    height: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: 'Work Sans';
+  text-transform: uppercase;
+  font-size: large;
+  letter-spacing: 0.1rem;
+  margin-bottom: $SPACING_MEDIUM;
+  background-color: $LETTUCE_GREEN;
+  color: $TEXT;
+  width: 100%;
+  height: 50px;
 
-    @media screen and (max-width: 577px) {
-        letter-spacing: 0rem;
-        font-size: medium;
-    }
+  @media screen and (max-width: 577px) {
+    letter-spacing: 0rem;
+    font-size: medium;
+  }
 }
 
 .section {
-    display: inline-block;
-    width: 100%;
-    color: $SALMON_RED;
+  display: inline-block;
+  width: 100%;
+  color: $SALMON_RED;
 }
 
 .section-title-container {
-    display: inline-block;
-    width: 100%;
+  display: inline-block;
+  width: 100%;
 }
 
 .section-title {
-    margin: $SPACING_SMALL $SPACING_XSMALL;
+  margin: $SPACING_SMALL $SPACING_XSMALL;
+  margin-bottom: $SPACING_XSMALL;
 }
 
 .section-bar {
-    background-color: $BLUE;
-    height: $SPACING_XSMALL;
-    margin: $SPACING_XSMALL;
+  background-color: $BLUE;
+  height: $SPACING_XSMALL;
+  margin: $SPACING_XSMALL;
 }
 
 .entry {
-    color: $LIGHT;
-    display: flex;
-    flex-direction: column;
-    margin: $SPACING_SMALL;
+  color: $TEXT;
+  display: flex;
+  flex-direction: column;
+  margin: $SPACING_MEDIUM;
+  margin-top: $SPACING_XSMALL;
 }
 
 .entry-title {
-    color: $TEXT;
-    margin: $SPACING_XSMALL 0;
-    font-size: 17px;
-    line-height: 1.25;
-    font-weight: bold;
+  font-family: Source Sans Pro;
+  margin: $SPACING_XSMALL 0;
+  font-size: 17px;
+  line-height: 1.25;
+  font-weight: bold;
 }
 
 .entry-institution {
-    margin: $SPACING_SMALL 0;
-    font-size: 16px;
-    line-height: 1.25;
-    font-weight: bold;
-}
-
-.entry-duration {
-    color: $BLACK;
-    margin-bottom: $SPACING_MEDIUM;
-    font-size: 14px;
-    font-style: italic;
+  font-family: Source Sans Pro;
+  margin: $SPACING_SMALL 0;
+  font-size: 15px;
+  line-height: 1.25;
+  font-weight: bold;
 }
 
 .entry-details {
-    color: $TEXT;
-    font-size: 14px;
-    line-height: 1.7em;
-    margin-bottom: $SPACING_SMALL;
+  color: $TEXT;
+  font-size: 14px;
+  line-height: 1.7em;
+  margin-bottom: $SPACING_SMALL;
+}
+
+.entry-subtitle {
+  margin: $SPACING_XSMALL 0;
+  font-size: 15px;
+  line-height: 1.25;
+  font-style: italic;
 }
 
 .tight p {
-    margin-bottom: 8px;
+  margin-bottom: 8px;
 }
 
 .tighter p {
-    margin-bottom: 0px;
+  margin-bottom: 0px;
 }
 
 .icon-section {
-    display: flex;
-    margin-bottom: $SPACING_LARGE;
+  display: flex;
+  margin-bottom: $SPACING_LARGE;
 }
 
 .link-icon {
-    margin-right: $SPACING_MEDIUM;
+  margin-right: $SPACING_MEDIUM;
 }

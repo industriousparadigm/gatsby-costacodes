@@ -1,14 +1,11 @@
 # costacodes.com
 
-My website, made with Gatsby and Typescript. Very WIP, it's not even online yet!
+[Live site](https://www.costacodes.com)
 
-The code is currently largely based on [e-nichols](https://github.com/e-nichols)'s [repo](https://github.com/e-nichols/gatsby-typescript-resume) which built a responsive resume on top of Gatsby Starter while adding TypeScript.
+My humble website, made with Gatsby, using Markdown, and some basic Typescript.
 
-He also has a very nice [tutorial](http://etnichols.com/tutorials/resume-with-react-and-tsx) describing the process.
+The resume part is largely based on [e-nichols](https://github.com/e-nichols)'s [repo](https://github.com/e-nichols/gatsby-typescript-resume) which built a responsive TS resume on top of Gatsby Starter. He also has a very nice [tutorial](http://etnichols.com/tutorials/resume-with-react-and-tsx) describing the process.
 
 ### To do
 
-- Add React Testing Library
-- Use TDD for all features going forward
-- Add landing page chatter
-- Better style
+- Add Projects section

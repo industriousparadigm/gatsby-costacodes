@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Diogo's website`,
-    description: `My page, using Gatsby and Typescript.`,
+    description: `My developer's page, using Gatsby with Markdown and Typescript.`,
     author: `Diogo Costa`,
     profession: 'Software developer',
     email: `dsgmcosta@gmail.com`,
@@ -20,21 +20,21 @@ module.exports = {
       }
     ],
     homeText: [
-      'Hi!',
+      'Hello! Thank you for visiting.',
       'Every day, I think about how to make software better and then type some code to achieve that goal.',
-      'I do so mainly at Stylist magazine in London, where I work as a web developer.'
+      'I do so mainly at Stylist magazine in London, where I am a Frontend Developer, and I spend time learning and having fun with side projects (like this one!) whenever I can.'
     ],
     resumeSections: [
       'Bio',
-      'Career',
-      'Projects',
-      'Education',
       'Programming tools',
-      'Languages'
+      'Education',
+      'Languages',
+      'Career',
+      'Projects'
     ]
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-react-helmet-async`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
