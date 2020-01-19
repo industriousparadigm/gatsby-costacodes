@@ -31,9 +31,12 @@ const ResumeSectionEntry: React.FC = ({ entry }) => {
   if (section === 'Projects')
     return (
       <div className='entry'>
-        <a href={link} target='_blank' rel='noopener noreferrer'>
-          <h3 className='entry-title'>{name}</h3>
-        </a>
+        <h3 className='entry-title'>
+          <a href={link} target='_blank' rel='noopener noreferrer'>
+            {name}
+          </a>
+          <span className='entry-date-inline'>{` - ${endDate}`}</span>
+        </h3>
         <p className='entry-subtitle'>{description}</p>
         <div
           className='entry-details'
@@ -46,9 +49,17 @@ const ResumeSectionEntry: React.FC = ({ entry }) => {
     return (
       <div className='entry'>
         <h3 className='entry-title'>{role}</h3>
-        <a href={link} target='_blank' rel='noopener noreferrer'>
-          <h5 className='entry-institution'>{institution}</h5>
-        </a>
+        <div className='entry-institution-container'>
+          <h5 className='entry-institution'>
+            <a href={link} target='_blank' rel='noopener noreferrer'>
+              {institution}
+            </a>
+            <span className='entry-date-inline'>
+              {' - '}
+              {startDate !== endDate ? `${startDate}-${endDate}` : endDate}
+            </span>
+          </h5>
+        </div>
         <div
           className='entry-details'
           dangerouslySetInnerHTML={{ __html: entry.node.html }}
@@ -63,7 +74,8 @@ const ResumeSectionEntry: React.FC = ({ entry }) => {
           <p className='entry-title'>{institution}</p>
         </a>
         <p className='entry-subtitle'>
-          {degree},{' '}
+          {degree}
+          {', '}
           {startDate !== endDate ? `${startDate}-${endDate}` : endDate}
         </p>
       </div>

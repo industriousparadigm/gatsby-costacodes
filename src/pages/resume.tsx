@@ -20,7 +20,9 @@ const ResumePage: FC = () => {
           github
         }
       }
-      allMarkdownRemark(sort: { order: DESC, fields: frontmatter___endDate }) {
+      allMarkdownRemark(
+        sort: { order: DESC, fields: frontmatter___startDate }
+      ) {
         edges {
           node {
             frontmatter {
@@ -41,19 +43,16 @@ const ResumePage: FC = () => {
     }
   `)
 
-  const { resumeSections } = site.siteMetadata
-  const entries = allMarkdownRemark.edges
-
   return (
     <Layout>
       <div className='resume-container'>
         <ResumeTitle siteMetadata={site.siteMetadata} />
         <div className='resume-body'>
-          {resumeSections.map(section => (
+          {site.siteMetadata.resumeSections.map(section => (
             <ResumeSection
               key={`section-${section}`}
               title={section}
-              entries={entries.filter(
+              entries={allMarkdownRemark.edges.filter(
                 entry => entry.node.frontmatter.section === section
               )}
             />

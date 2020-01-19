@@ -3,7 +3,7 @@ section: Career
 role: Audiovisual officer
 institution: International Federation of Red Cross and Red Crescent Societies
 link: https://www.ifrc.org
-startDate: 2019
+startDate: 2013
 endDate: 2019
 ---
 

@@ -27,13 +27,6 @@ li {
   margin: 0;
 }
 
-// h1,
-// h2,
-// h3,
-// h4 {
-//   font-family: 'Norwester';
-// }
-
 .resume-title {
   display: flex;
   flex-direction: column;
@@ -105,22 +98,35 @@ li {
   flex-direction: column;
   margin: $SPACING_MEDIUM;
   margin-top: $SPACING_XSMALL;
+
+  @media screen and (max-width: 577px) {
+    margin: $SPACING_SMALL;
+  }
 }
 
 .entry-title {
   font-family: Source Sans Pro;
-  margin: $SPACING_XSMALL 0;
+  margin: $SPACING_SMALL 0 0;
   font-size: 17px;
   line-height: 1.25;
   font-weight: bold;
 }
 
+.entry-institution-container {
+  margin-bottom: 0;
+}
+
 .entry-institution {
   font-family: Source Sans Pro;
   margin: $SPACING_SMALL 0;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.25;
   font-weight: bold;
+}
+
+.entry-date-inline {
+  font-size: 14px;
+  font-weight: 400;
 }
 
 .entry-details {
@@ -147,7 +153,7 @@ li {
 
 .icon-section {
   display: flex;
-  margin-bottom: $SPACING_LARGE;
+  margin-bottom: $SPACING_MEDIUM;
 }
 
 .link-icon {

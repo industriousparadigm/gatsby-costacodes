@@ -40,6 +40,10 @@ a:visited {
   li {
     margin-right: 4vw;
   }
+
+  .menu-item-active a {
+    color: $LETTUCE_GREEN;
+  }
 }
 
 #site-title {

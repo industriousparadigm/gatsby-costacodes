@@ -16,7 +16,13 @@ const ResumeTitle: React.FC = ({ siteMetadata }) => {
       <h5 className='title-section-description'>{`${profession} | ${location}`}</h5>
       <div className='icon-section'>
         {iconsWithLinks.map(([iconName, href], i) => (
-          <a key={`link-${i}`} className='link-icon' href={href}>
+          <a
+            key={`link-${i}`}
+            className='link-icon'
+            href={href}
+            target='_blank'
+            rel='noopener noreferrer'
+          >
             <Icon key={`link-${i}`} name={iconName} />
           </a>
         ))}
