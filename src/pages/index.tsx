@@ -4,7 +4,7 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { useStaticQuery, graphql } from 'gatsby'
 
-const IndexPage = () => {
+const IndexPage = ({ location }) => {
   const { site } = useStaticQuery(graphql`
     query {
       site {
@@ -15,7 +15,7 @@ const IndexPage = () => {
     }
   `)
   return (
-    <Layout>
+    <Layout location={location}>
       <SEO
         title='Home'
         keywords={[`developer`, `programming`, `react`, `javascript`, `node`]}

@@ -6,7 +6,7 @@ import Link from 'gatsby-link'
 import './layout.scss'
 import Header from './header'
 
-const Layout: FC = ({ children }) => {
+const Layout: FC = ({ children, location }) => {
   const { site } = useStaticQuery(graphql`
     query {
       site {
@@ -26,7 +26,7 @@ const Layout: FC = ({ children }) => {
   return (
     <>
       <div id='site-container'>
-        <Header siteTitle={title} menuItems={menuItems} />
+        <Header siteTitle={title} menuItems={menuItems} location={location} />
         <main>{children}</main>
         <footer>
           <div id='site-footer'>{`© ${new Date().getFullYear()} ${author}`}</div>

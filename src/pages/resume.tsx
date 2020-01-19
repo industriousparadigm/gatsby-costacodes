@@ -6,7 +6,7 @@ import Layout from '../components/layout'
 import ResumeSection from '../components/resume-section'
 import ResumeTitle from '../components/resume-title'
 
-const ResumePage: FC = () => {
+const ResumePage: FC = ({ location }) => {
   const { site, allMarkdownRemark } = useStaticQuery(graphql`
     query {
       site {
@@ -44,7 +44,7 @@ const ResumePage: FC = () => {
   `)
 
   return (
-    <Layout>
+    <Layout location={location}>
       <div className='resume-container'>
         <ResumeTitle siteMetadata={site.siteMetadata} />
         <div className='resume-body'>

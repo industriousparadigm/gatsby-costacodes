@@ -7,22 +7,21 @@ type Props = {
   menuItems: Array<Object>
 }
 
-const Header: React.FC<Props> = props => {
-  console.log({ props })
+const Header: React.FC<Props> = ({ location, siteTitle, menuItems }) => {
   return (
     <header id='site-header'>
       <Link to='/'>
         <h1 id='site-title' data-testid='site-title'>
-          {props.siteTitle}
+          {siteTitle}
         </h1>
       </Link>
       <nav>
         <ul id='menu'>
-          {props.menuItems.map((item, i) => (
+          {menuItems.map((item, i) => (
             <li
               key={i}
               className={`menu-item${
-                window.location.pathname === item.path ? '-active' : ''
+                location.pathname === item.path ? '-active' : ''
               }`}
             >
               <Link to={item.path}>{item.name}</Link>
