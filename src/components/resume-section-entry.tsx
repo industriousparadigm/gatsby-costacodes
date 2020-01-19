@@ -28,23 +28,6 @@ const ResumeSectionEntry: React.FC = ({ entry }) => {
       </div>
     )
 
-  if (section === 'Projects')
-    return (
-      <div className='entry'>
-        <h3 className='entry-title'>
-          <a href={link} target='_blank' rel='noopener noreferrer'>
-            {name}
-          </a>
-          <span className='entry-date-inline'>{` - ${endDate}`}</span>
-        </h3>
-        <p className='entry-subtitle'>{description}</p>
-        <div
-          className='entry-details'
-          dangerouslySetInnerHTML={{ __html: entry.node.html }}
-        />
-      </div>
-    )
-
   if (section === 'Career')
     return (
       <div className='entry'>
@@ -67,12 +50,31 @@ const ResumeSectionEntry: React.FC = ({ entry }) => {
       </div>
     )
 
+  if (section === 'Projects')
+    return (
+      <div className='entry'>
+        <h3 className='entry-title'>
+          <a href={link} target='_blank' rel='noopener noreferrer'>
+            {name}
+          </a>
+          <span className='entry-date-inline'>{` - ${endDate}`}</span>
+        </h3>
+        <p className='entry-subtitle'>{description}</p>
+        <div
+          className='entry-details'
+          dangerouslySetInnerHTML={{ __html: entry.node.html }}
+        />
+      </div>
+    )
+
   if (section === 'Education')
     return (
       <div className='entry'>
-        <a href={link} target='_blank' rel='noopener noreferrer'>
-          <p className='entry-title'>{institution}</p>
-        </a>
+        <h3 className='entry-title'>
+          <a href={link} target='_blank' rel='noopener noreferrer'>
+            {institution}
+          </a>
+        </h3>
         <p className='entry-subtitle'>
           {degree}
           {', '}

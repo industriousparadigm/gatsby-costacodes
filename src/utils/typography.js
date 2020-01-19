@@ -7,6 +7,10 @@ const typography = new Typography({
   bodyFontFamily: ['Source Sans Pro', 'sans-serif'],
   googleFonts: [
     {
+      name: 'Source Sans Pro',
+      styles: ['400', '700']
+    },
+    {
       name: 'Alegreya Sans SC',
       styles: ['800']
     },
