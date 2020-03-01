@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 
-import './icon.scss'
+import '../styles/icon.scss'
 
 const Icon: FC<{ name: string }> = ({ name, viewboxWidth, viewboxHeight }) => {
   switch (name) {

@@ -7,13 +7,13 @@ startDate: 2019
 endDate: 2020
 ---
 
+- Popular magazine for women with print and online platforms
 - **React-Node codebase** handling **thousands** of daily visitors
-- Learning technicalities of programming alongside **dev team culture**
 - Contributing to **tapestry-lite**, an in-house Node server for **SSR**
-- Updating the codebase to enable **React** upgrade (**hooks!**)
-- **Unit and integration tests** in Jest/Enzyme and Cypress
+- Custom components for **Wordpress** generated content
+- Ad delivery with **Google**, **Quantcast**, **Prebid**, **Permutive**, **Lotame**
+- Latest React and JS (**hooks**! **optional chaining**!)
+- Testing with **Jest**, **Testing Library** and **Cypress**
 - **Emotion** for theming and **CSS-in-JS**
-- Prebid.js to handle **ads**
-- Solid **Github peer review** workflow, **CircleCI** integration testing
+- **Github** peer review workflow, **CircleCI** and **Jira**
 - **Heroku** for review, staging and production environments
-- Working with **Redis** cache

@@ -22,7 +22,7 @@ module.exports = {
     homeText: [
       'Hello! Thank you for visiting.',
       'Every day, I think about how to make software better and then type some code to achieve that goal.',
-      'I do this mainly at Stylist magazine in London, where I collaborate with a fantastic dev team, and I spend time learning and having fun with side projects (like this one!) whenever I can.'
+      'I do this mainly at Stylist magazine in London, where I am part of a fantastic dev team. I also spend time learning and having fun with side projects (like this one!) whenever I can.'
     ],
     resumeSections: [
       'Bio',

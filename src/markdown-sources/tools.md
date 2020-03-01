@@ -2,10 +2,10 @@
 section: Programming tools
 ---
 
-Javascript, React, Typescript
+Javascript, Typescript, Go, Ruby
 
-Node, Ruby on Rails, Gatsby
+React, Node, Gatsby, Rails, Serverless
 
-SQL, MongoDB, GraphQL
+SQL, MongoDB, GraphQL, Apollo
 
-Heroku, Netflify, CircleCI
+Heroku, Netlify, CircleCI

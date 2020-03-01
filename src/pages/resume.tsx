@@ -1,12 +1,12 @@
 import React, { FC } from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
-import './resume.scss'
+import '../styles/resume.scss'
 
 import Layout from '../components/layout'
 import ResumeSection from '../components/resume-section'
 import ResumeTitle from '../components/resume-title'
 
-const ResumePage: FC = ({ location }) => {
+const ResumePage: FC = () => {
   const { site, allMarkdownRemark } = useStaticQuery(graphql`
     query {
       site {
@@ -44,7 +44,7 @@ const ResumePage: FC = ({ location }) => {
   `)
 
   return (
-    <Layout location={location}>
+    <Layout>
       <div className='resume-container'>
         <ResumeTitle siteMetadata={site.siteMetadata} />
         <div className='resume-body'>

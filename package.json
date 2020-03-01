@@ -7,7 +7,6 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "jest",
@@ -47,7 +46,8 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.9.0",
     "prettier": "^1.17.0",
-    "react-test-renderer": "^16.12.0"
+    "react-test-renderer": "^16.12.0",
+    "typescript": "^3.8.3"
   },
   "keywords": [
     "gatsby"

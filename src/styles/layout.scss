@@ -1,0 +1,117 @@
+@import '../styles/colors';
+@import '../styles/space';
+
+body {
+  background-color: $THEME_DARK_GREY;
+  color: $THEME_LIGHT_GREY;
+
+  a,
+  a:link,
+  a:visited,
+  a:active {
+    color: $SALMON_RED;
+  }
+
+  a:hover {
+    color: $LETTUCE_GREEN;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: #005b99;
+}
+
+#site-container {
+  padding: $SPACING_LARGE;
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+#menu {
+  display: flex;
+  list-style-type: none;
+  margin-left: 0;
+  margin-bottom: 2vh;
+
+  li {
+    margin-right: $SPACING_MEDIUM;
+  }
+
+  .menu-item-active {
+    color: $LETTUCE_GREEN;
+  }
+}
+
+#site-title {
+  color: $SALMON_RED;
+  line-height: 1;
+  margin: 0;
+  padding: $SPACING_MEDIUM 0;
+  text-decoration: none;
+}
+
+#site-footer {
+  padding-top: 10px;
+  color: $THEME_SALMON;
+  position: absolute;
+  left: 0;
+  bottom: 1em;
+  right: 0;
+  width: 100%;
+  text-align: center;
+}
+
+html {
+  height: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  /* TODO: Why is position relative necessary for sticky bottom footer? */
+  position: relative;
+  min-height: 100%;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  padding-bottom: 3em;
+}
+
+img {
+  border: 1px solid #000;
+}
+
+/**
+ * If you already use line highlighting
+ */
+
+/* Adjust the position of the line numbers */
+.gatsby-highlight pre[class*='language-'].line-numbers {
+  padding-left: 2.8em;
+}
+
+/**
+ * If you only want to use line numbering
+ */
+
+.gatsby-highlight {
+  background-color: #fdf6e3;
+  border-radius: 0.3em;
+  margin: 0.5em 0;
+  padding: 1em;
+  overflow: auto;
+}
+
+.gatsby-highlight pre[class*='language-'].line-numbers {
+  padding: 0;
+  padding-left: 2.8em;
+  overflow: initial;
+}

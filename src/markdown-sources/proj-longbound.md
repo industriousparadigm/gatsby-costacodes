@@ -4,6 +4,7 @@ name: Longbound
 description: Responsive website for Longbound, a Portuguese innovation team
 client: Longbound
 link: https://www.longbound.com
+startDate: 2019
 endDate: 2019
 ---
 

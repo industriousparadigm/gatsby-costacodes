@@ -53,7 +53,7 @@ function SEO({ description, lang, meta, keywords, title }) {
         },
         {
           name: `twitter:card`,
-          content: `summary`
+          content: `diogo's gatsby website`
         },
         {
           name: `twitter:creator`,

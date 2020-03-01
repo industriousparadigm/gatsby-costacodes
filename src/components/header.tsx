@@ -2,12 +2,7 @@ import { Link, graphql, useStaticQuery } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-type Props = {
-  siteTitle: string
-  menuItems: Array<Object>
-}
-
-const Header: React.FC<Props> = ({ location, siteTitle, menuItems }) => {
+const Header: React.FC = ({ siteTitle, menuItems }) => {
   return (
     <header id='site-header'>
       <Link to='/'>
@@ -18,13 +13,10 @@ const Header: React.FC<Props> = ({ location, siteTitle, menuItems }) => {
       <nav>
         <ul id='menu'>
           {menuItems.map((item, i) => (
-            <li
-              key={i}
-              className={`menu-item${
-                location.pathname === item.path ? '-active' : ''
-              }`}
-            >
-              <Link to={item.path}>{item.name}</Link>
+            <li key={i}>
+              <Link activeClassName='menu-item-active' to={item.path}>
+                {item.name}
+              </Link>
             </li>
           ))}
         </ul>
