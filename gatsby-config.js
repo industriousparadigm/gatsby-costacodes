@@ -12,17 +12,17 @@ module.exports = {
     menuItems: [
       {
         name: 'about',
-        path: '/'
+        path: '/',
       },
-      {
-        name: 'resume',
-        path: '/resume'
-      }
+      // {
+      //   name: 'resume',
+      //   path: '/resume',
+      // },
     ],
     homeText: [
       'Hello! Thank you for visiting.',
       'Every day, I think about how to make software better and then type some code to achieve that goal.',
-      'I do this mainly at Stylist magazine in London, where I am part of a fantastic dev team. I also spend time learning and having fun with side projects (like this one!) whenever I can.'
+      'I do this mainly with Trinny London as part of a growing dev team. Then I spend time learning and having fun with side projects (like this one!) whenever I can.',
     ],
     resumeSections: [
       'Bio',
@@ -30,8 +30,8 @@ module.exports = {
       'Education',
       'Languages',
       'Career',
-      'Projects'
-    ]
+      'Projects',
+    ],
   },
   plugins: [
     `gatsby-plugin-react-helmet-async`,
@@ -39,15 +39,15 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`
-      }
+        path: `${__dirname}/src/images`,
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `markdown-sources`,
-        path: `${__dirname}/src/markdown-sources`
-      }
+        path: `${__dirname}/src/markdown-sources`,
+      },
     },
     {
       resolve: `gatsby-transformer-remark`,
@@ -58,12 +58,12 @@ module.exports = {
             options: {
               prettierOptions: {
                 semi: false,
-                singleQuote: false
-              }
-            }
-          }
-        ]
-      }
+                singleQuote: false,
+              },
+            },
+          },
+        ],
+      },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -74,19 +74,19 @@ module.exports = {
         short_name: `costacodes-v0`,
         start_url: `/`,
         theme_color: `#ffffff`,
-        icon: `src/images/diogo-twitter.jpg` // This path is relative to the root of the site.
-      }
+        icon: `src/images/diogo-twitter.jpg`, // This path is relative to the root of the site.
+      },
     },
     {
       resolve: `gatsby-plugin-typography`,
       options: {
-        pathToConfigModule: `${__dirname}/src/utils/typography.js`
-      }
+        pathToConfigModule: `${__dirname}/src/utils/typography.js`,
+      },
     },
     `gatsby-plugin-typescript`,
-    `gatsby-plugin-sass`
+    `gatsby-plugin-sass`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
-  ]
-}
+  ],
+};
